@@ -1,0 +1,204 @@
+/* Responsive images */
+img {
+    height: auto;
+    width: 100%;
+}
+
+/* Logo sizing & other minor manipulations */
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+.site-heading {
+  text-shadow: 2px 2px 4px gray;
+}
+
+.card {
+  background-color: hsla(183, 66%, 95%, 100%);
+}
+
+.ad {
+
+}
+
+/* Extra button styles  */
+.btn {
+  box-shadow: 0 5px 0 #006599;
+  transition: all .01s linear;
+}
+
+.btn:active {
+  box-shadow: 0 2px 0 #006599;
+  transform: translateY(3px);
+}
+
+/* Calendar Styling - Schedule page */
+.month {
+  border: 1px solid black;
+}
+
+.calendar__day {
+  border: 1px solid hsla(177, 0%, 60%, 100%);
+  border-radius: 2%;
+  height: 100px;
+  padding: 0px 10px;
+}
+
+.calendar__day:hover {
+  transform: scale(1.01);
+  border: 2px solid black;
+}
+
+.dayLabel {
+  border-bottom: 1px solid hsla(177, 0%, 60%, 100%);
+}
+
+.calendar__game {
+  padding-left: 15px;
+}
+
+.calendar__link {
+  padding-left: 15px;
+}
+
+.page-item {
+  font-size: 11px;
+}
+
+/* Table Styling - Statistics page  */
+.playerStats {
+  border: 3px solid navy;
+}
+
+tr:hover {
+  transform: scale(1.01);
+  border: 2px solid navy;
+}
+
+th, td {
+  padding: 10px;
+  width: 15%;
+  border: 1px solid navy;
+}
+
+.rowHeader {
+  background-color: hsla(195, 20%, 80%);
+}
+
+.mainTableHeader {
+  background-color: teal;
+}
+
+tr:nth-child(2n+2) {
+  background-color: powderblue;
+}
+
+/* Animations - Contact page */
+/* Animation Keyframes */
+
+/* Rolling ball */
+/* spin right */
+@-webkit-keyframes rollRight {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rollRight {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-o-keyframes rollRight {
+  from { -o-transform: rotate(0deg); }
+  to { -o-transform: rotate(360deg); }
+}
+
+@keyframes rollRight {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* spin left  */
+@-webkit-keyframes rollLeft {
+  from { -webkit-transform: rotate(360deg); }
+  to { -webkit-transform: rotate(0deg); }
+}
+
+@-moz-keyframes rollLeft {
+  from { -moz-transform: rotate(360deg); }
+  to { -moz-transform: rotate(0deg); }
+}
+
+@-o-keyframes rollLeft {
+  from { -o-transform: rotate(360deg); }
+  to { -o-transform: rotate(0deg); }
+}
+
+@keyframes rollLeft {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* move from left to right  */
+@-webkit-keyframes moveRight {
+  from { left: 0; }
+  to { left: 90%; }
+}
+
+@-moz-keyframes moveRight {
+  from { left: 0; }
+  to { left: 90%; }
+}
+
+@-o-keyframes moveRight {
+  from { left: 0; }
+  to { left: 90%; }
+}
+
+@keyframes moveRight {
+  from { left: 0; }
+  to { left: 90%; }
+}
+
+/* move from right to left  */
+@-webkit-keyframes moveLeft {
+  from { right: 0; }
+  to { right: 90%; }
+}
+
+@-moz-keyframes moveLeft {
+  from { right: 0; }
+  to { right: 90%; }
+}
+
+@-o-keyframes moveLeft {
+  from { right: 0; }
+  to { right: 90%; }
+}
+
+@keyframes moveLeft {
+  from { right: 0; }
+  to { right: 90%; }
+}
+
+/* Animation Styles */
+.animation {
+  height: 150px;
+  width: 90%;
+  position: relative;
+}
+
+.ball {
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  animation: rollRight .5s linear 4,
+  rollLeft .5s linear 2s 4,
+  moveRight 2s ease-out,
+  moveLeft 2s ease-out 2s;
+}
+
+footer {
+  padding-bottom: 20px;
+}
