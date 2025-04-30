@@ -18,19 +18,28 @@ img {
   background-color: hsla(183, 66%, 95%, 100%);
 }
 
-.ad {
+/* .ad {
 
+} */
+
+/* Extra button styles */
+.btn {
+  background-color: #E0F7FA; /* Light cyan background */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all .2s ease-in-out;
 }
 
-/* Extra button styles  */
-.btn {
-  box-shadow: 0 5px 0 #006599;
-  transition: all .01s linear;
+.btn:hover {
+    background-color: #B2EBF2; /* Slightly darker shade for hover effect */
 }
 
 .btn:active {
-  box-shadow: 0 2px 0 #006599;
-  transform: translateY(3px);
+    box-shadow: none;
+    transform: translateY(2px);
 }
 
 /* Calendar Styling - Schedule page */
