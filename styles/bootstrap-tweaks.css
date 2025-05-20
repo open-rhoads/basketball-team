@@ -1,7 +1,8 @@
 /* Responsive images */
 img {
     height: auto;
-    width: 100%;
+    max-height: 500px;
+    width: 90%;
 }
 
 /* Logo sizing & other minor manipulations */
@@ -14,9 +15,9 @@ img {
   text-shadow: 2px 2px 4px gray;
 }
 
-.card {
-  background-color: hsla(183, 66%, 95%, 100%);
-}
+/* .card {
+  background-color: hsla(183, 66%, 95%, 100%); 
+} */
 
 /* .ad {
 
@@ -43,36 +44,33 @@ img {
 }
 
 /* Calendar Styling - Schedule page */
-.month {
-  border: 1px solid black;
+.calendar {
+  margin: 20px auto;
+  text-align: center;
 }
-
-.calendar__day {
-  border: 1px solid hsla(177, 0%, 60%, 100%);
-  border-radius: 2%;
-  height: 100px;
-  padding: 0px 10px;
+.calendar h2 {
+  margin-bottom: 10px;
 }
-
-.calendar__day:hover {
-  transform: scale(1.01);
-  border: 2px solid black;
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
 }
-
-.dayLabel {
-  border-bottom: 1px solid hsla(177, 0%, 60%, 100%);
+.calendar th,
+.calendar td {
+  height: auto;
+  width: 14.2%;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
-
-.calendar__game {
-  padding-left: 15px;
+.calendar .today {
+  background-color: #00bcd4;
+  color: white;
+  font-weight: bold;
 }
-
-.calendar__link {
-  padding-left: 15px;
-}
-
-.page-item {
-  font-size: 11px;
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 /* Table Styling - Statistics page  */
