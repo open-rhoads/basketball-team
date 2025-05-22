@@ -97,9 +97,9 @@ th, td {
   background-color: teal;
 }
 
-tr:nth-child(2n+2) {
+/* tr:nth-child(2n+2) {
   background-color: powderblue;
-}
+} */
 
 /* Animations - Contact page */
 /* Animation Keyframes */

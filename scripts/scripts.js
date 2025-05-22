@@ -22,7 +22,6 @@ function activeButton() { // this function adds/removes the active class dependi
         }
     });
   });
-
 }
 
 // dynamic calendar - grab elements and create a Date object
@@ -30,14 +29,54 @@ function activeButton() { // this function adds/removes the active class dependi
 const calendarBody = document.getElementById('calendarBody');
 const monthYear = document.getElementById('monthYear');
 let currentDate = new Date();
+let gameData = []; // this will hold all fetched games
 
-function generateCalendar(date) {
+// async function fetchTeams() { // you can use this to return all the teams, if needed
+//   const url = 'https://wnba-api.p.rapidapi.com/wnbateamlist';
+//   const options = {
+//     method: 'GET',
+//     headers: {
+//       'x-rapidapi-key': 'a33729b243msh3367725453e5651p11658bjsn585d27304cd6',
+//       'x-rapidapi-host': 'wnba-api.p.rapidapi.com'
+//     }
+//   };
+
+//   try {
+//     const response = await fetch(url, options);
+//     const result = await response.text();
+//     console.log(result);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+async function fetchGameData() {
+  const url = 'https://wnba-api.p.rapidapi.com/schedule-team?season=2025&teamId=14';
+  const options = {
+    method: 'GET',
+    headers: {
+      'x-rapidapi-key': 'a33729b243msh3367725453e5651p11658bjsn585d27304cd6',
+      'x-rapidapi-host': 'wnba-api.p.rapidapi.com'
+    }
+  };
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result);
+    return result.events;
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+async function generateCalendar(date) {
   calendarBody.innerHTML = '';
   const year = date.getFullYear(); // get the current full year
   const month = date.getMonth(); // get the current month (0-11)
   const firstDay = new Date(year, month, 1).getDay(); // returns the day of week (0-6) for the first day of the given month/year
   const daysInMonth = new Date(year, month + 1, 0).getDate(); // this returns the last day of the month...0 must access the month before...
-
+  gameData = await fetchGameData(); // store the data globally
+  console.log(gameData);
+  
   // display the month and year of the date passed as param
   monthYear.textContent = date.toLocaleString('default', { month: 'long', year: 'numeric' });
 
@@ -58,6 +97,21 @@ function generateCalendar(date) {
       cell.classList.add('today');
     }
 
+    // check for games on each day
+    const cellDate = new Date(year, month, day).toISOString().split('T')[0]; // format: YYYY-MM-DD
+    console.log(cellDate);
+    const gamesToday = gameData.filter(game => game.date.startsWith(cellDate)); // filter data for games where date matches the current cell
+    
+    if (gamesToday.length > 0) {
+      const gameList = document.createElement('ul');
+      gamesToday.forEach(game => { // may not need this, but nice to have if there were ever multiple games...
+        const item = document.createElement('li');
+        item.textContent = game.shortName;
+        gameList.appendChild(item);
+      });
+      cell.appendChild(gameList);
+    }
+
     row.appendChild(cell); // append every cell in the calendar
 
     // If the row is full, append it and start a new one
@@ -72,7 +126,7 @@ function generateCalendar(date) {
     }
   }
 
-  calendarBody.appendChild(row); // so why is the row appended again here...
+  //calendarBody.appendChild(row); // so why is the row appended again here...
 }
 
 // this function is attached to the onclick event for the nav buttons 
@@ -82,9 +136,9 @@ function changeMonth(offset) {
   generateCalendar(currentDate);
 }
 
-generateCalendar(currentDate); // initial generation of calendar, passing currentDate
-
 function init() {
+  //fetchTeams();
+  generateCalendar(currentDate); // initial generation of calendar, passing currentDate
   activeButton();
 }
 
