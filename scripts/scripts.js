@@ -24,7 +24,7 @@ function activeButton() { // this function adds/removes the active class dependi
   });
 }
 
-function header() {
+function headerFooter() {
   document.addEventListener("DOMContentLoaded", function () {
     const headerHTML = `
       <header class="row" tabindex="0">
@@ -47,20 +47,30 @@ function header() {
         </nav>
       </header>
     `;
+    const footerHTML = `
+      <footer class="row m-3" tabindex="0">
+        <nav tabindex="0">
+          <ul class="nav d-flex justify-content-center">
+            <li class="mx-5"><a href="#">Rules & Regulations</a></li>
+            <li class="mx-5"><a href="#">Contact Us</a></li>
+            <li class="mx-5"><a href="#">&copy;Copyright Information</a></li>
+          </ul>
+        </nav>
+      </footer>
+    `;
 
-    
-const wrapper = document.querySelector('.container.bg-light.wrapper');
-if (wrapper) {
-  wrapper.insertAdjacentHTML('afterbegin', headerHTML);
-} else {
-  console.warn('Wrapper element not found.');
-}
-
+    const wrapper = document.querySelector('.container.bg-light.wrapper');
+    if (wrapper) {
+      wrapper.insertAdjacentHTML('afterbegin', headerHTML);
+      wrapper.insertAdjacentHTML("beforeend", footerHTML);
+    } else {
+      console.warn('Wrapper element not found.');
+    }
   });
 }
 
 function init() {
-  header();
+  headerFooter();
   activeButton();
 }
 
