@@ -109,9 +109,28 @@ function changeMonth(offset) {
   generateCalendar(currentDate);
 }
 
-function init() {
+async function init() {
   //fetchTeams();
-  generateCalendar(currentDate); // initial generation of calendar, passing currentDate
+  const loading = document.getElementById("loading");
+  const calendar = document.getElementById("calendarBody");
+
+  // Show loading, hide table
+  loading.style.display = "block";
+  table.style.display = "none";
+
+  const data = await fetchGameData();
+  if (!data) {
+    console.error("No data returned from API.");
+    return;
+  }
+  if (data) {
+    // Show loading, hide table
+    loading.style.display = "none";
+    table.style.display = "block";
+    generateCalendar(currentDate); // initial generation of calendar, passing currentDate
+  } else {
+    console.error("Failed to load game data.");
+  }
 }
 
 init();

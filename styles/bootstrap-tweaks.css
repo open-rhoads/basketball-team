@@ -15,14 +15,6 @@ img {
   text-shadow: 2px 2px 4px gray;
 }
 
-/* .card {
-  background-color: hsla(183, 66%, 95%, 100%); 
-} */
-
-/* .ad {
-
-} */
-
 /* Extra button styles */
 .btn {
   background-color: #E0F7FA; /* Light cyan background */
@@ -74,27 +66,55 @@ img {
 }
 
 /* Table Styling - Statistics page  */
-.playerStats {
-  border: 3px solid navy;
+
+
+#playerStats {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  font-family: sans-serif;
+  background-color: hsla(180, 50%, 97%, 1); /* light teal background */
 }
 
-tr:hover {
-  transform: scale(1.01);
-  border: 2px solid navy;
+
+#playerStats th,
+#playerStats td {
+  border: 1px solid rgb(216, 236, 236); /* soft teal-gray border */
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+#playerStats thead th {
+  background-color: rgb(223, 245, 245); /* header with light teal */
+  font-weight: bold;
+}
+
+#playerStats tbody tr:nth-child(even) {
+  background-color: hsla(180, 50%, 98%, 1); /* alternating row color */
+}
+
+#playerStats tbody tr:hover {
+  background-color: hsla(180, 60%, 85%, 0.4); /* hover effect */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.section-header {
+   background-color: #e0e0e0;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.label-cell {
+  font-weight: bold;
+  background-color: hsla(180, 40%, 96%, 1); /* label cell with subtle teal */
 }
 
 th, td {
   padding: 10px;
   width: 15%;
-  border: 1px solid navy;
-}
-
-.rowHeader {
-  background-color: hsla(195, 20%, 80%);
-}
-
-.mainTableHeader {
-  background-color: teal;
+  /* border: 1px solid navy; */
 }
 
 /* tr:nth-child(2n+2) {

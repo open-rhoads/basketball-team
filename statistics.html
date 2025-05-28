@@ -7,69 +7,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link href="styles/bootstrap-tweaks.css" rel="stylesheet" type="text/css" />
+    
     <title>San Diego Surf Basketball</title>
 </head>
 <body class="bg-secondary-subtle">
   <div class="container bg-light wrapper">
-    <header class="row" tabindex="0">
-      <h1 class="col-12 text-info font-italic site-heading" tabindex="0">San Diego Waves</h1>
-      <nav class="col-12 navbar navbar-expand-md navbar-light bg-light" tabindex="0">
-          <a class="navbar-brand" href="#"><img src="images/wave.svg" alt="waves logo" class="logo" /></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNav"
-            aria-controls="collapseNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapseNav">
-            <ul class="d-flex navbar-nav">
-              <li class="flex-fill nav-item"><a class="nav-link btn m-1" href="./index.html">Home</a></li>
-              <li class="flex-fill nav-item"><a class="visually-hidden nav-link btn" href="#mainContent">Skip to Content</a></li>
-              <li class="flex-fill nav-item"><a class="nav-link btn m-1" href="./schedule.html">Schedule & Tickets</a></li>
-              <li class="flex-fill nav-item"><a class="nav-link btn m-1" href="./statistics.html">News & Statistics</a></li>
-              <li class="flex-fill nav-item"><a class="nav-link btn m-1" href="./contact.html">Contact & Information</a></li>
-            </ul>
-          </div>
-      </nav>
-    </header>
     <main class="row">
       <section class="col-12">
-        <h2 class="">Waves' Player Statistics</h2>
-        <div class="row justify-content-center">
-          <table class="col-10 playerStats bg-light">
+        <h2 class="">Surf Team Statistics</h2>
+        <div class="row justify-content-center"> 
+          <div id="loading">Loading stats...</div>
+          <table class="col-10 playerStats bg-light" id="playerStats">
             <thead>
-              <tr class="mainTableHeader">
+              <!-- <tr class="mainTableHeader">
                 <th>Player</th>
-                <!-- <th data-toggle="tooltip" data-placement="top" title="Points Per Game">PTS</th>
+                <th data-toggle="tooltip" data-placement="top" title="Points Per Game">PTS</th>
                 <th data-toggle="tooltip" data-placement="top" title="Rebounds Per Game">REB</th>
                 <th data-toggle="tooltip" data-placement="top" title="Assists Per Game">AST</th>
                 <th data-toggle="tooltip" data-placement="top" title="Blocks Per Game">BLK</th>
-                <th data-toggle="tooltip" data-placement="top" title="Steals Per Game">STL</th> -->
-              </tr>
+                <th data-toggle="tooltip" data-placement="top" title="Steals Per Game">STL</th>
+              </tr> -->
             </thead>
             <tbody>
-              <tr>
-                <th class="rowHeader">Earl Jones</th>
-                <td>19.9</td>
-                <td>7.5</td>
-                <td>2.5</td>
-                <td>1.1</td>
-                <td>0.2</td>
-              </tr>
-              <tr>
-                <th class="rowHeader">Walter Alenn</th>
-                <td>19.7</td>
-                <td>3.3</td>
-                <td>5.8</td>
-                <td>0.5</td>
-                <td>1.4</td>
-              </tr>
-              <tr>
-                <th class="rowHeader">Ronald Murphey</th>
-                <td>16.4</td>
-                <td>4.1</td>
-                <td>2.1</td>
-                <td>0.2</td>
-                <td>0.7</td>
-              </tr>
             </tbody>
           </table>
         </div>
